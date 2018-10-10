@@ -8,6 +8,7 @@ import {Button, Welcome} from '@storybook/react/demo';
 import KaraokeForm from "../components/KaraokeForm";
 import SongList from "../components/SongList";
 import Song from "../components/Song";
+import App from "../App";
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')}/>);
 
@@ -21,11 +22,14 @@ storiesOf('Button', module)
         </Button>
     ));
 
+storiesOf('App', module)
+    .add('full app', () => <App />);
+
 storiesOf('KaraokeForm', module)
-    .add('standard form', () => <KaraokeForm/>);
+    .add('default', () => <KaraokeForm/>);
 
 storiesOf('SongList', module)
-    .add('standard list', () => <SongList songs={[
+    .add('default', () => <SongList songs={[
         {
             id: 1528817077286,
             singer: 'Chris Weber',
@@ -45,7 +49,7 @@ storiesOf('SongList', module)
     ]}/>);
 
 storiesOf('Song', module)
-    .add('standard song', () => <Song
+    .add('default', () => <Song
         key={[1]}
         song={[
             {
