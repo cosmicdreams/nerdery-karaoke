@@ -1,4 +1,5 @@
 import React from 'react';
+import './KaraokeForm.css';
 
 class KaraokeForm extends React.Component {
     form = React.createRef();
@@ -11,7 +12,7 @@ class KaraokeForm extends React.Component {
     render() {
 
         return (
-            <form ref={this.form}>
+            <form ref={this.form} className="AddSong">
                 <input
                     type="text"
                     name="singer"

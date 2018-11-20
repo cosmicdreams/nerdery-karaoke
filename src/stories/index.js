@@ -5,9 +5,9 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 
 import {Button, Welcome} from '@storybook/react/demo';
-import KaraokeForm from "../components/KaraokeForm";
-import SongList from "../components/SongList";
-import Song from "../components/Song";
+import KaraokeForm from "../components/KaraokeForm/KaraokeForm";
+import SongList from "../components/SongList/SongList";
+import Song from "../components/Song/Song";
 import App from "../App";
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')}/>);

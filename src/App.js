@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import SongList from './components/SongList';
-import KaraokeForm from './components/KaraokeForm';
+import SongList from './components/SongList/SongList';
+import KaraokeForm from './components/KaraokeForm/KaraokeForm';
 
 class App extends React.Component {
     constructor() {
@@ -86,20 +86,32 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <div className="App">
+                <div className="App-header">
+                    <div className="App-logo"></div>
+                    <div className="App-title">Nerdery Karaoke</div>
+
+
+                </div>
+
                 <KaraokeForm
                     value={this.state.song}
                     handleAddSong={this.addSong}
-                    handleClearSongs={this.clearCompletedSongs}
-                />
+                    handleClearSongs={this.clearCompletedSongs} />
+
+                <div className="App-body">
+                    <div className="col">
+                        <SongList
+                            handleToggleComplete={this.toggleSongComplete}
+                            songs={this.state.songs}
+                        />
+                    </div>
+                    <div className="col">
+
+
+                    </div>
                 </div>
-                <div>
-                <SongList
-                    handleToggleComplete={this.toggleSongComplete}
-                    songs={this.state.songs}
-                />
-                </div>
+
             </div>
         );
     }

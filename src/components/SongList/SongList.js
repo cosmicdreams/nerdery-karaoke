@@ -1,10 +1,11 @@
 import React from 'react';
 
-import Song from './Song';
+import Song from '../Song/Song';
+import "./SongList.css"
 
 const SongList = props => {
     return (
-        <div>
+        <div className="SongList">
             {props.songs.map(song => (
                 <Song
                     handleToggleComplete={props.handleToggleComplete}

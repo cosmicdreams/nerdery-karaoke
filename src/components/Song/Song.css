@@ -1,0 +1,23 @@
+.Song {
+    display: grid;
+    grid-template-columns: auto auto;
+    border: 3px #444 solid;
+    margin: 3px;
+    background-color: #805e9c;
+}
+
+.col {
+    vertical-align: top;
+}
+
+.singer {
+    font-size: 32px;
+}
+
+.song {
+    font-size: 24px;
+}
+
+.artist {
+    font-size: 16px;
+}

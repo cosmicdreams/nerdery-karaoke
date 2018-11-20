@@ -1,0 +1,13 @@
+.AddSong{
+    margin: 0 50px;
+}
+
+.AddSong input {
+    margin: 5px;
+}
+
+@media screen and (max-width: 480px) {
+    .AddSong input {
+        display: block;
+    }
+}
