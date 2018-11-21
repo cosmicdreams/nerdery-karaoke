@@ -14,29 +14,21 @@ class KaraokeForm extends React.Component {
         return (
             <form ref={this.form} className="AddSong">
                 <div>
-                    <input
-                        type="text"
-                        name="singer"
-                        placeholder="Stage Name"
-                    />
+                    <input type="text" name="singer" placeholder="Stage Name" autoFocus />
+
                 </div>
                 <div>
-                    <input
-                        type="text"
-                        name="song_name"
-                        placeholder="Song Name"
-                    />
-                    <input
-                        type="text"
-                        name="artist"
-                        placeholder="Song Artist"
-                    />
+                    <input type="text" name="song_name" placeholder="Song Name" />
+                    <input type="text" name="artist" placeholder="Song Artist" />
+                </div>
+                <div>
+                    <input type="text" name="url" placeholder="Youtube url (optional)" />
                 </div>
 
                 <button type="button" onClick={this.handleAddSong}>Add Song</button>
             </form>
         );
     };
-};
+}
 
 export default KaraokeForm;
