@@ -13,23 +13,27 @@ class KaraokeForm extends React.Component {
 
         return (
             <form ref={this.form} className="AddSong">
-                <input
-                    type="text"
-                    name="singer"
-                    placeholder="Singer Name"
-                />
-                <input
-                    type="text"
-                    name="song_name"
-                    placeholder="Song Name"
-                />
-                <input
-                    type="text"
-                    name="artist"
-                    placeholder="Song Artist"
-                />
+                <div>
+                    <input
+                        type="text"
+                        name="singer"
+                        placeholder="Stage Name"
+                    />
+                </div>
+                <div>
+                    <input
+                        type="text"
+                        name="song_name"
+                        placeholder="Song Name"
+                    />
+                    <input
+                        type="text"
+                        name="artist"
+                        placeholder="Song Artist"
+                    />
+                </div>
+
                 <button type="button" onClick={this.handleAddSong}>Add Song</button>
-                <button type="button" onClick={this.props.handleClearSongs}>Clear Completed</button>
             </form>
         );
     };

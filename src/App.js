@@ -56,16 +56,6 @@ class App extends React.Component {
         this.setState({songs});
     };
 
-    /**
-     * Needed for look ahead auto-complete
-     *
-     * Possible API Integration point.
-     * @param e
-     */
-    /*changeSong = e => {
-        console.log('change happened.');
-    };*/
-
     toggleSongComplete = id => {
         let songs = this.state.songs.slice();
         songs = songs.map(song => {
@@ -84,27 +74,14 @@ class App extends React.Component {
         return songs[0].url;
     };
 
-    clearCompletedSongs = e => {
-        e.preventDefault();
-        let songs = this.state.songs.slice();
-        songs = songs.filter(song => !song.completed);
-        this.setState({songs});
-    };
-
     render() {
         return (
             <div className="App">
                 <div className="App-header">
                     <div className="App-logo"></div>
                     <div className="App-title">Nerdery Karaoke</div>
-
-
+                    <div className="App-version">v0.1</div>
                 </div>
-
-                <KaraokeForm
-                    value={this.state.song}
-                    handleAddSong={this.addSong}
-                    handleClearSongs={this.clearCompletedSongs}/>
 
                 <div className="App-body">
                     <div className="col">
@@ -114,7 +91,12 @@ class App extends React.Component {
                         />
                     </div>
                     <div className="col">
-                        <youtube-thumbnail video_id="q8paX24shfk" target="karaokeWindow" />
+                        <h2>Quick Add</h2>
+                        <KaraokeForm
+                            value={this.state.song}
+                            handleAddSong={this.addSong}/>
+                        <h2>Currently playing</h2>
+                        <youtube-thumbnail video_id={this.getSongToPlay(0)} target="karaokeWindow" />
                     </div>
                 </div>
 
