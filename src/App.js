@@ -114,8 +114,7 @@ class App extends React.Component {
                         />
                     </div>
                     <div className="col">
-
-
+                        <youtube-thumbnail video_id="q8paX24shfk" target="karaokeWindow" />
                     </div>
                 </div>
 
