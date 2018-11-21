@@ -3,37 +3,36 @@ import './App.css';
 
 import SongList from './components/SongList/SongList';
 import KaraokeForm from './components/KaraokeForm/KaraokeForm';
+import Song from "./models/Song";
 
 class App extends React.Component {
     constructor() {
         super();
         this.state = {
             songs: [
-                {
-                    id: 1528817077286,
-                    singer: 'Chris Weber',
-                    artist: 'Peter Gabriel',
-                    song_name: 'In Your Eyes',
-                    url: "",
-                    completed: false
-                },
-                {
-                    id: 1528817084358,
-                    singer: 'Chris Weber',
-                    artist: "Des'ree",
-                    song_name: 'You Gotta Be',
-                    url: "",
-                    completed: false
-                }
+                new Song(
+                    {
+
+                        id: 1528817077286,
+                        singer: 'Chris Weber',
+                        artist: 'Peter Gabriel',
+                        song_name: 'In Your Eyes',
+                        url: "q8paX24shfk",
+                        completed: false
+                    }
+                ),
+                new Song(
+                    {
+                        id: 1528817084358,
+                        singer: 'Chris Weber',
+                        artist: "Des'ree",
+                        song_name: 'You Gotta Be',
+                        url: "yLec_TsaTpA",
+                        completed: false
+                    }
+                ),
+
             ],
-            song: {
-                id: 0,
-                singer: '',
-                artist: '',
-                song_name: '',
-                url: "",
-                completed: false
-            }
         };
     }
 
@@ -43,14 +42,17 @@ class App extends React.Component {
     addSong = form => {
         console.log(form);
         const songs = this.state.songs.slice();
-        songs.push({
-            id: Date.now(),
-            singer: form.singer.value,
-            artist: form.artist.value,
-            song_name: form.song_name.value,
-            url: "",
-            completed: false
-        });
+        songs.push(
+            new Song(
+                {
+                    id: Date.now(),
+                    singer: form.singer.value,
+                    artist: form.artist.value,
+                    song_name: form.song_name.value,
+                    url: "",
+                    completed: false
+                })
+        );
         this.setState({songs});
     };
 
@@ -77,6 +79,11 @@ class App extends React.Component {
         this.setState({songs});
     };
 
+    getSongToPlay = id =>  {
+        let songs = this.state.songs.slice();
+        return songs[0].url;
+    };
+
     clearCompletedSongs = e => {
         e.preventDefault();
         let songs = this.state.songs.slice();
@@ -97,7 +104,7 @@ class App extends React.Component {
                 <KaraokeForm
                     value={this.state.song}
                     handleAddSong={this.addSong}
-                    handleClearSongs={this.clearCompletedSongs} />
+                    handleClearSongs={this.clearCompletedSongs}/>
 
                 <div className="App-body">
                     <div className="col">
