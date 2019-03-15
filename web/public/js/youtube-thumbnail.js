@@ -27,6 +27,7 @@ class YoutubeThumbnail extends HTMLElement {
   display: none;
 }
 </style>
+
 <a href="https://youtu.be/${this.video_id}" target="${this.target}">
   <img src="https://img.youtube.com/vi/${this.video_id}/hqdefault.jpg" title="Youtube thumbnail"/>
 </a>`;
